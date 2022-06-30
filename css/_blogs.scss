@@ -1,0 +1,57 @@
+
+.blogs {
+    padding: 0;
+    .container {
+        .blogs-container {
+            @include grid(35rem);
+            .blog-box {
+                border: $border;
+                border-color: $light-color;
+                border-radius: 0.5rem;
+
+                img {
+                    width: 100%;
+                }
+
+                .content {
+                    padding: 2rem;
+                    color: $black;
+
+                    .title {
+                        font-size: 2.5rem;
+                    }
+                    .description {
+                        font-size: 1.3rem;
+                        color: $light-color;
+                        line-height: 2;
+                        padding: 0.5rem 0;
+                    }
+
+                    .btn {
+                        font-size: 1.5rem;
+                        padding: 0.5rem 2rem;
+                    }
+
+                    .line {
+                        border-bottom: $border;
+                        border-color: $light-color;
+                        margin: 1.5rem 0;
+                    }
+                    .icons {
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        .icon {
+                            i {
+                                color: $pink;
+                                padding-right: 0.3rem;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

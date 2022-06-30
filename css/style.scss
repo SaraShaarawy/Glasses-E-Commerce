@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@500;600&family=Nunito:ital,wght@0,300;0,400;0,500;1,300;1,600&family=Poppins:wght@300;400;500;600&display=swap");
+@import "../css/variables";
+@import "../css/mixins/mixins";
+@import "../css/products";
+@import "../css/about";
+@import "../css/blogs";
+@import "../css/contact";
+@import "../css/login";
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+  list-style: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+}
+
+html {
+  font-size: 62.5%;
+}
+
+// All bottons styling
+.btn {
+  font-size: 1.7rem;
+  padding: 1rem 2rem;
+  display: inline-block;
+  margin-top: 1rem;
+  animation: fadeIn 0.4s 0.6s linear backwards;
+  @include slider();
+
+  &:hover {
+    @include bottonHover();
+  }
+}
+
+section,
+footer,
+section .container {
+  padding: 2rem 9%;
+}
+
+section .header:first-child {
+  text-align: center;
+  background-color: $pink;
+  padding: 2rem;
+  color: $white;
+
+  .title {
+      font-size: 3rem;
+      text-transform: uppercase;
+      padding-bottom: 0.5rem;
+  }
+
+  .listed {
+      a {
+          font-size: 1.4rem;
+          color: $white;
+          padding: 0 0.3rem;
+
+          &:hover {
+              color: $black;
+          }
+      }
+  }
+}
+
+section {
+  .container {
+      .description-title {
+          text-align: center;
+          font-size: 2.5rem;
+          color: $black;
+          padding-bottom: 2rem;
+      }
+  }
+}
+
+header {
+  background-color: $white;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  box-shadow: $shadow;
+  padding: 0 9%;
+
+  .logo {
+    font-size: 2.5rem;
+    color: $black;
+    font-weight: bolder;
+    margin-right: auto;
+    text-transform: uppercase;
+  }
+
+  .navbar {
+    ul {
+      li {
+        position: relative;
+        float: left;
+
+        &:hover {
+          ul {
+            display: block;
+          }
+        }
+
+        a {
+          font-size: 1.7rem;
+          color: $light-color;
+          padding: 2rem;
+          display: block;
+
+          &:hover {
+            background-color: $light-bg;
+            border-radius: 0.2rem;
+          }
+        }
+
+        ul {
+          position: absolute;
+          left: 0;
+          width: 13rem;
+          background-color: $white;
+          display: none;
+          box-shadow: $shadow;
+          border-radius: 0.3rem;
+
+          li {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .icons .icon,
+  .icons .cart {
+    margin-left: 2rem;
+    font-size: 2.5rem;
+    color: $black;
+    cursor: pointer;
+
+    &:hover {
+      color: $pink;
+    }
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .search-form {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    right: 0;
+    height: 5.5rem;
+    padding: 1rem 2rem;
+    border-top: $border;
+    display: flex;
+    align-items: center;
+    background-color: $white;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 0, 0 0);
+
+    &.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    input {
+      width: 100%;
+      height: 100%;
+      font-size: 1.7rem;
+      text-transform: none;
+      color: $light-color;
+    }
+
+    label {
+      font-size: 2.5rem;
+      color: $black;
+      cursor: pointer;
+
+      &:hover {
+        color: $pink;
+      }
+    }
+  }
+}
+
+.home {
+  padding: 0;
+  position: relative;
+  .slide {
+    padding: 2rem;
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 60rem;
+    align-items: center;
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+
+    span,
+    .title {
+      color: $black;
+    }
+
+    span {
+      font-size: 2rem;
+      animation: fadeIn 0.4s 0.2s linear backwards;
+    }
+
+    .title {
+      font-size: 6rem;
+      text-transform: uppercase;
+      animation: fadeIn 0.4s 0.4s linear backwards;
+    }
+  }
+
+  .next-slide,
+  .prev-slide {
+    @include slider();
+
+    &:hover {
+      @include bottonHover();
+    }
+  }
+
+  .next-slide,
+  .prev-slide {
+    position: absolute;
+    right: 1rem;
+    bottom: 2rem;
+    padding: 1.5rem 2rem;
+    font-size: 3rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+
+  .prev-slide {
+    right: 7.5rem;
+  }
+}
+
+.banner {
+  @include grid(31rem);
+
+  .box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+
+    &:hover .image {
+      transform: scale(1.1);
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      right: 3rem;
+      transform: translateY(-50%);
+
+      span,
+      h3 {
+        color: $black;
+      }
+
+      span {
+        font-size: 1.5rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+        padding-top: 1rem;
+      }
+
+      .btn {
+        padding: 0.6rem 2rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+footer {
+  .container {
+    @include grid(20rem);
+    margin-bottom: 2rem;
+
+    .box {
+      .header {
+        color: $black;
+        font-size: 2rem;
+        padding-bottom: 1rem;;
+      }
+
+      .links {
+        .link {
+          font-size: 1.4rem;
+          padding-bottom: 1rem;
+
+          &:hover a {
+            color: $pink;
+          }
+
+          i {
+            color: $pink;
+            padding-right: 0.3rem;
+          }
+
+          a {
+            color: $light-color;
+          }
+        }
+      }
+
+      .description,
+      .email {
+        font-size: 1.4rem;
+        color: $light-color;
+      }
+      .subscribe-form {
+        .email {
+          width: 100%;
+          border-bottom: $border;
+          padding: 1rem;
+        }
+
+        .btn {
+          // padding: 0.5rem 1rem;
+          // font-size: 1.3rem;
+        }
+      }
+    }
+  }
+
+  hr {
+    border: 0.1rem solid $light-color;
+  }
+
+  .credit {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    color: $black;
+
+    span {
+        color: $pink;
+    }
+  }
+}
+
+@import "../css/mediaQueries";

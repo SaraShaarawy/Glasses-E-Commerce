@@ -1,0 +1,104 @@
+
+.login {
+    .container {
+        .contact-info {
+            margin: auto;
+            border: $light-border;
+            border-radius: 1rem;
+            padding: 2rem;
+            width: 42rem;
+        .login-form {
+            input:not([type=checkbox]) {
+                display: block;
+                width: 100%;
+            }
+            input[type=text] {
+                background-color: $light-bg;
+                margin-bottom: 1rem;
+                border-radius: 0.5rem;
+                text-transform: none;
+            }
+            input:not([type='button']) {
+                padding: 2rem;
+            }
+
+            .btn.register {
+                background-color: $black;
+                color: $white;
+
+                &:hover {
+                    background-color: $white;
+                    color: $black;
+                }
+            }
+
+            .options {
+                display: flex;
+                justify-content: space-between;
+                padding: 1rem 0;
+                font-size: 1.4rem;
+
+                .forgot, .checkbox-container {
+                    color: $black;
+                }
+
+                .forgot:hover {
+                    color: $pink;
+                }
+
+                .checkbox-container
+                {
+                    position: relative;
+                    padding-left: 2rem;
+                    display: block;
+                    cursor: pointer;
+
+                   /* Hide the default checkbox */
+                    .checkbox {
+                        visibility: hidden;
+                    }
+                    /* Create a custom checkbox */
+                    .mark {
+                        position: absolute;
+                        top:0.2rem;
+                        left: 0;
+                        height: 1.5rem;
+                        width: 1.5rem;
+                        background-color: $light-bg;
+                        border-radius: 0.1rem;
+                    }
+
+                &:hover .checkbox ~ .mark {
+                    background-color: $light-color;
+                }
+                
+                & .checkbox:checked ~ .mark {
+                    background-color: $pink;
+                }
+                
+                /* Create the mark/indicator (hidden when not checked) */
+                .mark:after {
+                    content: "";
+                    position: absolute;
+                    display: none;
+                }
+                
+                /* Show the mark when checked */
+                & .checkbox:checked ~ .mark:after {
+                    display: block;
+                }
+                
+                /* Style the mark/indicator */
+                & .mark:after {
+                    left: 0.5rem; top: 0.2rem;
+                    width: 0.2rem; height: 0.7rem;
+                    border: solid $white;
+                    border-width: 0 0.3rem 0.3rem 0;
+                    transform: rotate(45deg);
+                }
+                }
+            }
+        }
+    }
+}
+}

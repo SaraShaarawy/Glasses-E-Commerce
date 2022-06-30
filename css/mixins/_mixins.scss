@@ -1,0 +1,17 @@
+@mixin grid($val) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
+    gap: 1.5rem;
+  }
+  
+  @mixin slider {
+    color: $black;
+    background: $white;
+    border: $border;
+    border-radius: 0.5rem;
+  }
+  
+  @mixin bottonHover {
+    background-color: $black;
+    color: $white;
+  }

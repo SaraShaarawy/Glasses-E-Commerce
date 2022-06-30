@@ -1,0 +1,39 @@
+
+.contact {
+    padding: 0;
+    .container {
+        .contact-info {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+
+            .contact-form {
+                border: $light-border;
+                padding: 2rem;
+                .input {
+                    display: block;
+                    border-bottom: $light-border;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                    width: 100%;
+                    color: $black;
+                    text-transform: none;
+
+                    &:focus {
+                        border-color: $black;
+                    }
+
+                }
+                textarea {
+                    resize: none;
+                }
+            }
+
+            .contact-form, .location {
+                width: 100%;
+                border-radius: 0.5rem;  
+                flex: 1 1 20rem;              
+            }
+        }
+    }
+}

@@ -1,0 +1,70 @@
+@import "../css/mixins/mixins";
+// Products page styling
+.products {
+    text-align: center;
+    padding: 0;
+    .container {
+        @include grid(31.5rem);
+        overflow-x: hidden;
+
+        .box {
+            border: $border;
+            border-radius: 0.4rem;   
+            position: relative;        
+
+            img {
+                width: 100%;
+            }
+
+            .content {
+                // text-align: center;
+                margin-top: -6rem;
+                margin-bottom: 5rem;
+                font-size: 1.7rem;
+                color: $black;
+
+                .title {
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+
+                .stars {
+                    color: $pink;
+                    margin: 0.5rem 0;
+                }
+
+                .price {
+                    span {
+                        font-size: 1.2rem;
+                        text-decoration: line-through;
+                    }
+                }
+
+            }
+
+            .icons {
+                position: absolute;
+                top: 0; 
+                padding: 1.5rem 0;
+                border-bottom: $border;
+                width: 100%;
+                // display: none;
+                transform: scaleY(0);
+
+                i {
+                    font-size: 2rem;
+                    color: $black;
+                    padding: 0 1.5rem;
+
+                    &:hover {
+                        color: $pink;
+                    }
+                }
+            }
+
+            &:hover .icons {
+                transform: scaleY(1);
+            }
+        }
+    }
+}
